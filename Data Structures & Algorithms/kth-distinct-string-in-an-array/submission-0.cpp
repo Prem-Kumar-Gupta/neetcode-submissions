@@ -1,0 +1,19 @@
+class Solution {
+public:
+    string kthDistinct(vector<string>& arr, int k) {
+        int c= 0 ;
+        unordered_map<string,int>m;
+        for(int i =0 ; i <arr.size();i++){
+            m[arr[i]]++;
+        }
+         for(int i =0 ; i <arr.size();i++){
+            if(m[arr[i]]==1){
+                c++;
+                if(c==k){
+                    return arr[i];
+                }
+            }
+        }
+        return "";
+    }
+};
